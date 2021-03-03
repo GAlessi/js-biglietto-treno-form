@@ -6,7 +6,7 @@
         <style media="screen">
             .container{
                 width: 100%;
-                height: 100vh;
+                height: calc(100vh - 37.6px);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -30,7 +30,7 @@
             var età = prompt("Inserisci la tua età:");
             var prezzoTratta = 0.21;
             var costo = chilometri * prezzoTratta;
-            console.log(chilometri, età, costo);
+            console.log("km da percorrere:" + chilometri,"età passeggero:" + età,"costo per km:" + prezzoTratta,"costo:" + costo);
 
             if(età < 18){
                 var costoEffettivo = (costo * 80) / 100;
