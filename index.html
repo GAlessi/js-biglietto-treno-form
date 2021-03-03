@@ -2,9 +2,29 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Biglietto treno</title>
+        <title>Biglietto Treno</title>
+        <style media="screen">
+            .container{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1{
+                color: blue;
+            }
+
+        </style>
     </head>
     <body>
+
+        <div class="container">
+            <h1 id="stamp"></h1>
+        </div>
+
+<!-- SCRIPT -->
         <script type="text/javascript">
             var chilometri = prompt("Quanti Km intendi percorrere?");
             var età = prompt("Inserisci la tua età:");
@@ -14,10 +34,15 @@
 
             if(età < 18){
                 var costoEffettivo = (costo * 80) / 100;
+                document.getElementById('stamp').innerHTML = ("Complimenti, hai diritto al nostro esclusivo sconto del 20%. La tua tratta costerà: " + costoEffettivo + "$ invece che: " + costo + "$")
+
             }else if(età > 65){
                 var costoEffettivo = (costo * 60) / 100;
+                document.getElementById('stamp').innerHTML = ("Complimenti, hai diritto al nostro esclusivo sconto del 40%. La tua tratta costerà: " + costoEffettivo + "$ invece che: " + costo + "$")
+
             }else{
                 var costoEffettivo = costo;
+                document.getElementById('stamp').innerHTML = ("Peccato, non rientri in alcuna fascia di sconto. La tua tratta costerà: " + costoEffettivo + "$")
             }
 
             console.log(costoEffettivo);
