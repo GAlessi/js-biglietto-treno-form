@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Biglietto treno</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var chilometri = prompt("Quanti Km intendi percorrere?");
+            var età = prompt("Inserisci la tua età:");
+            var prezzoTratta = 0.21;
+            var costo = chilometri * prezzoTratta;
+            console.log(chilometri, età, costo);
+
+            if(età < 18){
+                var costoEffettivo = (costo * 80) / 100;
+            }else if(età > 65){
+                var costoEffettivo = (costo * 60) / 100;
+            }else{
+                var costoEffettivo = costo;
+            }
+
+            console.log(costoEffettivo);
+        </script>
+    </body>
+</html>
